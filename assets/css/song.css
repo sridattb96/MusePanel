@@ -1,0 +1,39 @@
+
+body {
+	font-family: 'Lato', sans-serif;
+	background-color: #eafbfb;
+}
+
+#song-title {
+	color: black;
+    font-size: 40px;
+    font-weight: 400;
+    margin-left: 20px;
+    margin-top: 20px;
+    letter-spacing: .5px;
+}
+
+#song-artist {
+	letter-spacing: .5px;
+	font-size: 25px;
+	color: #808080;
+	margin-left: 20px;
+	font-weight: 300;
+}
+
+#song-key {
+	margin-top: 20px;
+    margin-left: 20px;
+    color: #76C51F;
+    font-size: 30px;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	font-size: 12px;
+	padding-bottom: 5px;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+}

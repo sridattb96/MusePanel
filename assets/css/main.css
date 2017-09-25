@@ -1,0 +1,127 @@
+
+/* COLORS
+
+light yellow - #fdf8ed
+green - #76C51F
+dark gray - #808080
+
+*/
+
+/*  Autcomplete default classes */
+
+.ui-menu-item {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	box-shadow: 0px 2px 5px #888888;
+	width: 678px;
+	font-family: 'Lato', sans-serif;
+	padding-left:20px;
+	height: 58px;
+	transition: .2s ease-out;
+	background-color: white;
+
+}
+
+.ui-menu-item:hover {
+	transition: .1s ease-in;
+	background-color: #e5e5e5;
+	cursor: pointer;
+}
+
+.ui-helper-hidden-accessible {
+	display: none;
+}
+
+.ui-menu {
+	top: 0px !important;
+}
+
+/* Custom Dropdown Styling */
+
+.song-title {
+	font-size: 25px;
+	line-height: 60px;
+	float: left;
+	letter-spacing: 0.5px;
+	font-weight: 400;
+}
+
+.song-key {
+	float: right;
+	font-size: 20px;
+	line-height: 60px;
+	padding-right: 15px;
+	color: #76C51F;
+	font-weight: 400;
+}
+
+.song-artist {
+	float: left;
+    line-height: 60px;
+    font-size: 20px;
+    color: #808080;
+    padding-top: 2px;
+    padding-left: 5px;
+}
+
+li {
+	list-style: none;
+}
+
+ul {
+	padding-left: 0px;
+}
+
+/* Search Bar */
+
+#songSearch {
+	width: 700px;
+	height: 60px;
+	box-shadow: 0px 2px 5px #888888;
+	margin-top: 75px;
+	border: none;
+	padding-left: 20px;
+	font-size: 30px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
+#songSearch:focus {
+	outline: none;
+}
+
+#songSearch::placeholder {
+	color: #bfbfbf;
+}
+
+/* General page */
+
+body {
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	background-color: #eafbfb;
+}
+
+#product-title {
+	font-size: 60px;
+	font-weight: 400;
+	margin-top: 100px;
+	color: #76C51F;
+	letter-spacing: 1px;
+}
+
+#product-caption {
+	font-size: 20px;
+	color: #888888;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	font-size: 12px;
+	padding-bottom: 5px;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+}
