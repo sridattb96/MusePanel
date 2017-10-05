@@ -1,6 +1,20 @@
 
 var songTable = {};
 var keyTable = {};
+var keyToRank = {
+	"C": 0,
+	"Db": 0.5,
+	"D": 1,
+	"Eb": 1.5,
+	"E": 2,
+	"F": 2.5,
+	"Gb": 3,
+	"G": 3.5,
+	"Ab": 4,
+	"A": 4.5,
+	"Bb": 5,
+	"B": 5.5
+}
 
 $(document).ready(function(){
 
@@ -8,30 +22,46 @@ $(document).ready(function(){
 
  		var source = [];
  		data.feed.entry.map(function(obj){
- 			var song = obj["gsx$song"]["$t"];
- 			var key = spellKey(obj["gsx$key"]["$t"]);
- 			var artist = obj["gsx$artist"]["$t"];
+ 			if (obj["gsx$song"]["$t"].length > 0 && obj["gsx$key"]["$t"].length > 0 && obj["gsx$artist"]["$t"].length > 0){
+	 			var song = obj["gsx$song"]["$t"];
+	 			var key = spellKey(obj["gsx$key"]["$t"]);
+	 			var artist = obj["gsx$artist"]["$t"];
+	 			var note = key.split(" ")[0];
+	 			var keyType = key.split(" ")[1];
+	 			var rank = keyToRank[note];
 
- 			source.push({
- 				value: song, 
- 				artist: artist,
- 				key: key
- 			});
+	 			source.push({
+	 				value: song, 
+	 				artist: artist,
+	 				key: key
+	 			});
 
- 			var hash = hashSong(song, artist);
+	 			var hash = hashSong(song, artist);
 
- 			songTable[hash] = {
- 				title: song, 
- 				artist: artist,
- 				key: key
- 			}
+	 			songTable[hash] = {
+	 				title: song, 
+	 				artist: artist,
+	 				key: key,
+	 				note: note,
+	 				keyType: keyType,
+	 				rank: rank
+	 			}
 
- 			if (!(key in keyTable)) keyTable[key] = [];
- 			keyTable[key].push(hash);
+	 			if (!(key in keyTable)){
+	 				console.log(key);
+	 				keyTable[key] = [];
+	 			}
+	 			keyTable[key].push(hash);
 
- 			localStorage.setItem("songTable", JSON.stringify(songTable));
- 			localStorage.setItem("keyTable",  JSON.stringify(keyTable));
+	 			localStorage.setItem("songTable", JSON.stringify(songTable));
+	 			localStorage.setItem("keyTable",  JSON.stringify(keyTable));
+	 		}
  		})
+
+ 		console.log(keyTable);
+
+ 		console.log(songTable);
+ 		console.log(source.length);
 
  		initAutocomplete(source);
 	});
@@ -69,7 +99,7 @@ $(document).ready(function(){
 	}
 
 	function spellKey(key){
-		return key.slice(0, -1) + (key[key.length-1] == key[key.length-1].toLowerCase() ? " minor" : " major")
+		return key.slice(0, -1) + (key[key.length-1] == key[key.length-1].toLowerCase() ? " minor" : " Major");
 	}
 });
 
