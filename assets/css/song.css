@@ -46,11 +46,18 @@ body {
 }
 
 #song-key {
-	margin-top: 20px;
-    margin-left: 20px;
-    color: #76C51F;
-    font-size: 30px;
+/*	margin-top: 20px;
+    margin-left: 20px;*/
     display: inline-block;
+
+    float: right;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 10px;
+    transform: translate(0, -130px);
+    font-size: 50px;
+    background-color: #76C51F;
 }
 
 footer {
@@ -65,9 +72,10 @@ footer {
 
 #rec-section {
 	width: 100vw;
-	height: 350px;
+	height: 325px;
 	position: absolute;
 	bottom: 30px;
+	padding-left: 10px;
 }
 
 .song-wrapper {
@@ -121,8 +129,6 @@ footer {
 	line-height: 60px !important;
 	color: #ff7f7f;
 	transform: translate(0, 1.5px);
-	/*padding-right: 5px;*/
-	/*font-weight: 200;*/
 }
 
 .song-artist {
@@ -152,7 +158,7 @@ footer {
 	margin-left: 20px;
 	box-shadow: 0px 2px 5px #888888;
 	transition: .1s ease-out ;
-	transform: translate(0, 100px);
+	transform: translate(0, 175px);
 }
 
 #refresh:hover {
@@ -170,9 +176,40 @@ iframe {
 }
 
 #iframe-wrapper {
-	top: 30px;
+	top: 45px;
 	right: 10px;
-	left: 50%;
 	position: absolute;
 	width: 100%;
+	margin: 0 auto;
+	text-align: center;
 }
+
+.download {
+	float: right;
+	background-color: #808080;
+	width: 150px;
+	height: 45px;
+	line-height:45px;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+	margin-left: 10px;
+	margin-right: 10px;
+	box-shadow: 0px 2px 5px #888888;
+	transition: .1s ease-out ;
+}
+
+#download-wrapper {
+	margin-right: 10px;
+	width: 350px;
+	position: absolute !important;
+	right: 0 !important;
+	transform: translate(0, 175px);
+}
+
+.download:hover {
+	cursor: pointer;
+	box-shadow: none;
+	transition: .1s ease-in ;
+}
+

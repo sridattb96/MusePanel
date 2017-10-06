@@ -82,7 +82,30 @@ $(document).ready(function(){
 		fillRecommendations(songRecs);
 	})
 
+	$(".download").on('click', function(){
+		openLink(this.id.split('-')[1]);
+	})
+
 });
+
+function openLink(mp3Type){
+	console.log(mp3Type);
+	var link = "http://www.instamp3.audio/download/";
+	var query = songObj["title"] + " " + songObj["artist"];
+	if (mp3Type == 'instrumental') 
+		query += " instrumental";
+
+	var win = window.open(link + query.replace(" ", "-") + ".html", '_blank');
+	if (win) {
+	    //Browser has allowed it to be opened
+	    win.focus();
+	} else {
+	    //Browser has blocked it
+	    alert('Please allow popups for this website');
+	}
+
+
+}
 
 function initPage(){
 	songObj = getSongObj(); // get from param
